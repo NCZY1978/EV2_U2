@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+<head>
+</head>
+
+<body>
+    <body id="body" class="text-bg-info p-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table ">
+                        <h1>Resultado de la Evaluación</h1>
+                        <tr>
+                        <td><img class="img" src="./assets/imagenes/logo_cft_estatal.jpeg" alt="...">
+                        <td>Incio</td>
+                        <td>Adminsion</td>
+                        <td>Carrera</td>
+                        <td>Contactanos</td>
+                        <td><input type="text" name="BC" value="Buscar tu Carrera"><input type="submit" value="Buscar"></td>
+                        </td>
+                        </tr>
+                    </table>    
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+    <div id="resultado"></div>
+</div>
+</div>
+</div>
+    <script>
+        const nombre = localStorage.getItem('nombre');
+        const asignatura = localStorage.getItem('asignatura');
+        const note1 = localStorage.getItem('note1');
+        const note2 = localStorage.getItem('note2');
+        const note3 = localStorage.getItem('note3');
+        const note4 = localStorage.getItem('note4');
+        const note5 = localStorage.getItem('note5');
+        const note6 = localStorage.getItem('note6');
+        const weightedGrade = localStorage.getItem('weightedGrade');
+
+        const resultadoDiv = document.getElementById('resultado');
+        resultadoDiv.innerHTML = `
+            <p>Nombre: ${nombre} </p>
+            <p>Asignatura: ${asignatura}</p>
+            <p>Unidad 1 (12%) Nota 1: ${note1} (Ponderación: ${note1 * 0.12})</p>
+            <p>Unidad 1 (21%) Nota 2: ${note2} (Ponderación: ${note2 * 0.21})</p>
+            <p>Unidad 2 (12%) Nota 3: ${note3} (Ponderación: ${note3 * 0.12})</p>
+            <p>Unidad 2 (21%) Nota 4: ${note4} (Ponderación: ${note4 * 0.21})</p>
+            <p>Unidad 3 (13%) Nota 5: ${note5} (Ponderación: ${note5 * 0.13})</p>
+            <p>Unidad 3 (21%) Nota 6: ${note6} (Ponderación: ${note6 * 0.21})</p>
+            <p>Promedio Final: ${weightedGrade}</p>
+            <p>${weightedGrade >= 4.0 ? "¡Has aprobado la asignatura!" : "No has aprobado la asignatura."}</p>
+        `;
+        
+    </script>
+    <script src="./assets/js/EV2_U2.JS"></script>
+</body>
+
+</html>
